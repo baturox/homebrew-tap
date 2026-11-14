@@ -10,7 +10,11 @@ brew install --cask baturox/tap/mac-cleaner
 
 This installs `Mac Cleaner.app` into `/Applications` and puts the `mac-cleaner` command-line tool on your `PATH`.
 
-The app is not notarized yet, so macOS warns on first launch: right-click the app and choose **Open**, or allow it under System Settings > Privacy & Security.
+The app is not notarized by Apple yet, so macOS blocks the app and the `mac-cleaner` command on first use. In the dialog choose **Done** (not *Move to Trash*), then open **System Settings > Privacy & Security** and click **Open Anyway**, or run:
+
+```sh
+xattr -dr com.apple.quarantine "/Applications/Mac Cleaner.app"
+```
 
 ## Update and remove
 

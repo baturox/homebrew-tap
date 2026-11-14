@@ -16,4 +16,12 @@ cask "mac-cleaner" do
 
   app "Mac Cleaner.app"
   binary "#{appdir}/Mac Cleaner.app/Contents/Resources/bin/mac-cleaner"
+
+  caveats <<~EOS
+    Mac Cleaner is not notarized by Apple yet, so macOS blocks it on first use
+    ("Apple could not verify..."). Choose Done, not Move to Trash, then either
+    open System Settings > Privacy & Security and click Open Anyway, or run:
+      xattr -dr com.apple.quarantine "#{appdir}/Mac Cleaner.app"
+    Until then the mac-cleaner command is stopped by macOS as well.
+  EOS
 end
