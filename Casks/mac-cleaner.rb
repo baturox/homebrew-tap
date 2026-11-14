@@ -12,7 +12,7 @@ cask "mac-cleaner" do
     strategy :github_latest
   end
 
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "Mac Cleaner.app"
   binary "#{appdir}/Mac Cleaner.app/Contents/Resources/bin/mac-cleaner"
