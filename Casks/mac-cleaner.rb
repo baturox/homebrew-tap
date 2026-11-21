@@ -1,6 +1,6 @@
 cask "mac-cleaner" do
-  version "0.2.0"
-  sha256 "74ca1ef671198062eb3bd8831d56823c91e22d1bc2d7aaa13afc0e438c1e43d3"
+  version "0.3.0"
+  sha256 "e53733d3ba24d00956053ea071892b194f778a1354b2d8303b391832f84c56cd"
 
   url "https://github.com/baturox/mac-cleaner/releases/download/v#{version}/MacCleaner-#{version}.dmg"
   name "Mac Cleaner"
@@ -12,6 +12,7 @@ cask "mac-cleaner" do
     strategy :github_latest
   end
 
+  auto_updates true
   depends_on macos: :sonoma
 
   app "Mac Cleaner.app"
